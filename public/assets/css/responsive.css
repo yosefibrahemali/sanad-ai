@@ -1,0 +1,334 @@
+/* ==========================================================================
+   سَنَد AI - Responsive & Mobile Navigation Stylesheet
+   ========================================================================== */
+
+/* Mobile Bottom Navigation Bar */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 68px;
+  background-color: rgba(255, 253, 252, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid var(--border-medium);
+  z-index: 1500;
+  justify-content: space-around;
+  align-items: center;
+  padding-inline: 12px;
+  box-shadow: 0 -4px 20px rgba(39, 30, 25, 0.06);
+}
+
+.mobile-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+}
+
+.mobile-nav-item:hover,
+.mobile-nav-item.active {
+  color: var(--primary-accent);
+}
+
+.mobile-nav-item.active svg {
+  stroke: var(--primary-accent);
+  transform: translateY(-2px);
+}
+
+/* Mobile Header Hamburger */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: var(--radius-xs);
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 280px;
+  height: 100vh;
+  background-color: var(--bg-surface);
+  border-left: 1px solid var(--border-medium);
+  z-index: 2500;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right var(--transition-normal);
+  box-shadow: var(--shadow-floating);
+}
+
+.mobile-drawer.open {
+  right: 0;
+}
+
+.mobile-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(39, 30, 25, 0.4);
+  z-index: 2400;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.mobile-drawer-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1080px) {
+  .workflow-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-visual-card {
+    max-width: 580px;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .chat-shell {
+    grid-template-columns: 1fr;
+    height: calc(100vh - 170px);
+  }
+
+  .chat-analysis-panel {
+    display: none; /* Can be toggled on mobile via header button */
+  }
+
+  .chat-analysis-panel.mobile-visible {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 2200;
+  }
+
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-sidebar {
+    display: none;
+  }
+
+  .nav-links, .header-actions .btn-secondary {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .mobile-bottom-nav {
+    display: flex;
+  }
+
+  body {
+    padding-bottom: 70px; /* Space for bottom nav */
+  }
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 2.1rem; }
+  h2 { font-size: 1.7rem; }
+  h3 { font-size: 1.3rem; }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .workflow-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .specialists-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .community-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .message-row {
+    max-width: 92%;
+  }
+
+  .modal-window {
+    padding: 24px 20px;
+  }
+}
+
+/* =========================================================
+   SANAD AI — HEADER RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1180px) {
+
+    .nav-links {
+        gap: 0;
+    }
+
+    .nav-link {
+        padding-left: 9px;
+        padding-right: 9px;
+
+        font-size: .82rem;
+    }
+
+    .header-safety-link > span:last-child {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 1020px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .header-inner {
+        gap: 14px;
+    }
+
+    .header-actions {
+        margin-right: auto;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .main-header {
+        height: 68px;
+    }
+
+    .header-inner {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .brand-mark {
+        width: 39px;
+        height: 39px;
+
+        border-radius: 12px;
+    }
+
+    .brand-mark svg {
+        width: 21px;
+        height: 21px;
+    }
+
+    .brand-name {
+        font-size: 1.25rem;
+    }
+
+    .brand-ai {
+        font-size: .61rem;
+    }
+
+    .header-safety-link,
+    .specialist-link {
+        display: none;
+    }
+
+    .header-primary-btn {
+        height: 40px;
+
+        padding: 0 13px;
+
+        font-size: .78rem;
+
+        border-radius: 10px;
+    }
+
+    .header-primary-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .mobile-menu-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .brand-text {
+        gap: 3px;
+    }
+
+    .brand-name {
+        font-size: 1.15rem;
+    }
+
+    .header-primary-btn span {
+        display: none;
+    }
+
+    .header-primary-btn {
+        width: 40px;
+
+        padding: 0;
+    }
+
+}
