@@ -21,8 +21,8 @@ return Application::configure(basePath: dirname(__DIR__))
         );
     })
     ->booting(function (Application $app): void {
-        if ($app->environment('local')) {
-            URL::forceScheme('https');
-        }
+        // if ($app->environment('local')) {
+        //     URL::forceScheme('https');
+        // }
     })
     ->create();
